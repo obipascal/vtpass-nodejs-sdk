@@ -1,5 +1,5 @@
 {
-    "name": "vtpass-nodejs-sdk",
+    "name": "@obipascal/vtpass-nodejs-sdk",
     "version": "1.0.0",
     "description": "VTPass Node.js SDK for interacting with VTPass api on Node.js environment. The library support both ES6 and CommonJS. It's well documented and typed.",
     "main": "./lib/cjs/index.js",

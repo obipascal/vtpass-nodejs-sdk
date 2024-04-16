@@ -1,68 +1,57 @@
-## Paystack API SDK For NodeJS
+## VTPass Library For NodeJS
 
 A Node.js package that facilitates type checking and offers compatibility with both CommonJS and ES6 environments within TypeScript. This package utilizes Axios as its HTTP client for seamless communication with the Paystack backend.
 
 ### Paystack Resource Available
 
--   ApplePay
--   Charge
--   Const
--   Customer
--   DedicatedVirtualAccount
--   Dispute
--   Miscellaneous
--   Page
--   PaymentRequest
--   Plans
--   Product
--   Refund
--   Subaccounts
--   Subscription
--   Transactions
--   Transfer
--   TransferRecipient
--   Verification
+-   Airtime
+-   Data Subscription
+-   Electricity Bills
+-   Cable TV Subscription
 
 ### Installation
 
 ```
-npm install paystack-sdk
+npm install @obipascal/vtpass-nodejs-sdk
 ```
 
 or
 
 ```
-yarn add paystack-sdk
+yarn add @obipascal/vtpass-nodejs-sdk
 ```
 
 ### Usage
 
 ```js
 // import the resource you want to consume
-import { Customers } from "@obipascal/paystack-sdk";
+import { VTPassConfigOptions, AirtimeBody, ResponseStatus, ResponseCodes  } from "@obipascal/vtpass-nodejs-sdk";
 
-// initialize the resouce with your paystack secret key
-const customersResource = Customers(process.env.YOUR_PAYSTACK_SECRET_KEY);
+  // You can defind this config options somewhere in your project configs and export it for reuse. If you are using the apikey as your authentication option make sure that is also so provided to the VTPassBaseConfig. By default those are optional.
+        const options: VTPassConfigOptions = {
+            username: process.env.VTPASS_USERNAME,
+            password: process.env.VTPASS_PASSWORD,
+            env: "sandbox", // "sandbox" | "production"
+            authType: "basic", // possible values:  "basic" | "apikey" | "all"
+        };
 
-// Now create your first customer
-const createNewCustomer = async () => {
-    try {
-        const customer = await customersResource.create({
-            email: "example@gmail.com",
-            first_name: "John",
-            last_name: "Doe",
-            phone: "+2348123456789",
-        });
+        const airtime = new AirtimeApis(options);
+        // Request data
+        const data: AirtimeBody = {
+            amount: 100,
+            phone: process.env.VTPASS_TEST_PHONE_NUMBER as string, // For test purposes use the VTPass api documentation phone number
+        };
 
-        if (customer?.status) {
-            expect(customer?.data?.email).toBe("example@gmail.com");
-        } else {
-            throw new Error("An error occurred while creating a new customer");
+        const response = await airtime.buyMtnAirtime(data);
+        // Check that the request was successful
+        if (response.code !== ResponseCodes.SUCCESS) {
+            throw new Error("Request failed");
         }
-    } catch (error) {
-        throw new Error("An error occurred while creating a new customer");
-    }
-};
+
+        expect(response?.content?.transactions?.status).toBe(
+            ResponseStatus.DELIVERED
+        );
+
 ```
 
 ### Contributing
@@ -71,10 +60,13 @@ const createNewCustomer = async () => {
 
 ### Tests
 
-To run tests, add your Paystack test secret key to `jest.env.js` if the file doesn't exist create one in your root directory and add the following content:
+To run tests, add your VTPass Credentials `jest.env.js` if the file doesn't exist create one in your root directory and add the following content:
 
 ```js
-process.env.PAYSTACK_KEY = "YOUR_PAYSTACK_TEST_KEY";
+process.env.VTPASS_USERNAME = "my.bilmapay@gmail.com";
+process.env.VTPASS_PASSWORD = "BilmaPay$12hack";
+process.env.VTPASS_ENV = "sandbox";
+process.env.VTPASS_TEST_PHONE_NUMBER = "08011111111";
 ```
 
 . Now run:
@@ -84,7 +76,3 @@ npm test
 ```
 
 If you are contributing to the repo, kindly update the necessary test file in `/test` or add a new one and ensure all tests are passed before sending a PR.
-
-### Todo
-
--   Add types support for respones.
