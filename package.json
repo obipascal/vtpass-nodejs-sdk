@@ -1,0 +1,55 @@
+{
+    "name": "vtpass-nodejs-sdk",
+    "version": "1.0.0",
+    "description": "VTPass Node.js SDK for interacting with VTPass api on Node.js environment. The library support both ES6 and CommonJS. It's well documented and typed.",
+    "main": "./lib/cjs/index.js",
+    "module": "./lib/es/index.js",
+    "types": "./lib/es/types/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./lib/es/index.js",
+            "require": "./lib/cjs/index.js"
+        }
+    },
+    "scripts": {
+        "test": "jest",
+        "build:es": "tsc -p tsconfig.es.json",
+        "build:test": "tsc -p tsconfig.test.json",
+        "build:cjs": "tsc -p tsconfig.cjs.json",
+        "build": "npm run build:es && npm run build:cjs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/obipascal/vtpass-nodejs-sdk.git"
+    },
+    "keywords": [
+        "VTPass",
+        "Nodejs",
+        "SDK",
+        "VTPass",
+        "VTPass",
+        "APIs",
+        "VTPass",
+        "Node.js",
+        "Library"
+    ],
+    "author": "Obi Pascal Banjuare (pascalobi83@gmail.com)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/obipascal/vtpass-nodejs-sdk/issues"
+    },
+    "homepage": "https://github.com/obipascal/vtpass-nodejs-sdk#readme",
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.1.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.4"
+    },
+    "dependencies": {
+        "axios": "^1.6.8"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    }
+}
