@@ -3,6 +3,7 @@ export const EndPoints = {
         makePayment: "/pay",
         queryTransaction: "/requery",
         verifyMerchant: "/merchant-verify",
+        fetchProducts: "/service-variations?serviceID=:provider",
     },
     internationalAirtime: {
         fetchCountries: "/get-international-airtime-countries",

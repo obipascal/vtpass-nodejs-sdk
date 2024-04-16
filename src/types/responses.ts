@@ -1,10 +1,15 @@
 import { AxiosResponse } from "axios";
-import { ResponseCodes, ResponseStatus } from "./const";
+import { ResponseCodes, ResponseStatus, SmartcardProviders } from "./const";
 
-export interface VTPassBaseResponse<T> extends AxiosResponse {
+export interface VTPassBaseResponse<T = any, V = any> extends AxiosResponse {
     code: ResponseCodes;
+
     content: {
         transactions: T;
+        ServiceName: string;
+        serviceID: string;
+        convinience_fee: string;
+        varations: V;
     };
     response_description: string;
     requestId: string;
@@ -89,4 +94,45 @@ export interface VTPassMeterTokenTransactionResponse<T>
     bonusTokenAmount: number;
     tariffIndex: string;
     debtDescription: string;
+}
+
+export interface SmartcardVerificationResponse {
+    Customer_Name: string;
+    Status: string;
+    DUE_DATE: string;
+    Customer_Number: number;
+    Customer_Type: string;
+    Current_Bouquet: string;
+    Current_Bouquet_Code: string;
+    Renewal_Amount: number;
+}
+
+export interface SmartcardProductItem {
+    variation_code: string;
+    name: string;
+    variation_amount: string;
+    fixedPrice: string;
+}
+
+export interface SmartcardTransactionResponse {
+    status: string;
+    channel: string;
+    transactionId: string;
+    method: string;
+    platform: string;
+    is_api: number;
+    discount: number | null;
+    customer_id: number;
+    email: string;
+    phone: string;
+    type: string;
+    convinience_fee: string;
+    commission: number;
+    amount: string;
+    total_amount: number;
+    quantity: number;
+    unit_price: string;
+    updated_at: string;
+    created_at: string;
+    id: number;
 }

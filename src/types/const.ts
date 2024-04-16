@@ -88,3 +88,25 @@ export enum MeterType {
     PREPAID = "prepaid",
     POSTPAID = "postpaid",
 }
+
+export enum SmartcardProviders {
+    DSTV = "dstv",
+    GOTV = "gotv",
+    STARTIMES = "startimes",
+    SHOWMAX = "showmax",
+}
+
+export enum SmartcardSubscriptionType {
+    CHANGE = "change",
+    RENEW = "renew",
+}
+
+export enum DataSubProviders {
+    MTN = "mtn-data",
+    AIRTEL = "airtel-data",
+    GLO = "glo-data",
+    ETISALAT = "etisalat-data",
+    NINE_MOBILE = "9mobile-sme-data",
+    SMILE = "smile-direct",
+    SPECTRANET = "spectranet",
+}
