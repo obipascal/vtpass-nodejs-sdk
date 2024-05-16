@@ -54,6 +54,20 @@ import { VTPassConfigOptions, AirtimeBody, ResponseStatus, ResponseCodes  } from
 
 ```
 
+### Configuration options types
+
+```js
+export interface VTPassConfigOptions {
+    username?: string;
+    password?: string;
+    env: "sandbox" | "production";
+    pubKey?: string;
+    secKey?: string;
+    apiKey?: string;
+    authType: "basic" | "apikey" | "all";
+}
+```
+
 ### Contributing
 
 -   To ensure consistent code style, please follow the in .editorconfig
