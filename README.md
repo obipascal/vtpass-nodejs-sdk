@@ -77,8 +77,8 @@ export interface VTPassConfigOptions {
 To run tests, add your VTPass Credentials `jest.env.js` if the file doesn't exist create one in your root directory and add the following content:
 
 ```js
-process.env.VTPASS_USERNAME = "my.bilmapay@gmail.com";
-process.env.VTPASS_PASSWORD = "BilmaPay$12hack";
+process.env.VTPASS_USERNAME = "example@yourdomain.com";
+process.env.VTPASS_PASSWORD = "Example12$hacks";
 process.env.VTPASS_ENV = "sandbox";
 process.env.VTPASS_TEST_PHONE_NUMBER = "08011111111";
 ```
