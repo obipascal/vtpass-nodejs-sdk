@@ -4,6 +4,8 @@ export const EndPoints = {
         queryTransaction: "/requery",
         verifyMerchant: "/merchant-verify",
         fetchProducts: "/service-variations?serviceID=:provider",
+        listAvailableServices: "/service-categories",
+        listServices: "/services?identifier=:identifier", // identifier is obtained from listAvailableServices
     },
     internationalAirtime: {
         fetchCountries: "/get-international-airtime-countries",
