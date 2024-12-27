@@ -4,6 +4,8 @@ export declare const EndPoints: {
         queryTransaction: string;
         verifyMerchant: string;
         fetchProducts: string;
+        listAvailableServices: string;
+        listServices: string;
     };
     internationalAirtime: {
         fetchCountries: string;

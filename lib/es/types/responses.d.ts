@@ -19,6 +19,10 @@ export interface VTPassBaseResponse<T = any, V = any> extends AxiosResponse {
     };
     purchased_code: string;
 }
+export interface VTPassServicesBaseResponse<T = any> extends AxiosResponse {
+    response_description: string;
+    content: T;
+}
 export interface AirtimeTransactionResponse {
     status: ResponseStatus;
     product_name: string;
@@ -125,4 +129,17 @@ export interface SmartcardTransactionResponse {
     updated_at: string;
     created_at: string;
     id: number;
+}
+export interface IService {
+    serviceID: string;
+    name: string;
+    minimium_amount: string;
+    maximum_amount: number;
+    convinience_fee: string;
+    product_type: string;
+    image: string;
+}
+export interface IServiceCategory {
+    identifier: string;
+    name: string;
 }
