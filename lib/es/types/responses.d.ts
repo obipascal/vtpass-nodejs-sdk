@@ -20,6 +20,7 @@ export interface VTPassBaseResponse<T = any, V = any> extends AxiosResponse {
     purchased_code: string;
 }
 export interface VTPassServicesBaseResponse<T = any> extends AxiosResponse {
+    code: string;
     response_description: string;
     content: T;
 }

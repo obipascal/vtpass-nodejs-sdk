@@ -1,5 +1,5 @@
 import { VTPassBaseConfig } from "../configs/VTPassBaseConfig";
-import { MeterTransactionResponse, MeterVerificationResponse, VTPassBaseResponse, VTPassConfigOptions, VTPassMeterTokenTransactionResponse } from "../types";
+import { MeterTransactionResponse, MeterVerificationResponse, VTPassConfigOptions, VTPassMeterTokenTransactionResponse, VTPassServicesBaseResponse } from "../types";
 import { MeterTokenBody, VerifyMeterBody } from "../types/meter";
 export declare class MeterApis extends VTPassBaseConfig {
     /**
@@ -11,7 +11,7 @@ export declare class MeterApis extends VTPassBaseConfig {
      *  Verify Meter
      * @param data The request body
      */
-    verify(data: VerifyMeterBody): Promise<VTPassBaseResponse<MeterVerificationResponse>>;
+    verify(data: VerifyMeterBody): Promise<VTPassServicesBaseResponse<MeterVerificationResponse>>;
     /**
      *  Purchase Meter Token
      * @param data The request body

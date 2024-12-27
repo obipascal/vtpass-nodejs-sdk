@@ -1,5 +1,5 @@
 import { VTPassBaseConfig } from "../configs/VTPassBaseConfig";
-import { SmartcardVerificationResponse, VTPassBaseResponse, VTPassConfigOptions, SmartcardMerchantVerificationBody, SmartcardRequestBody, SmartcardTransactionResponse, SmartcardProductItem } from "../types";
+import { SmartcardVerificationResponse, VTPassBaseResponse, VTPassConfigOptions, SmartcardMerchantVerificationBody, SmartcardRequestBody, SmartcardTransactionResponse, SmartcardProductItem, VTPassServicesBaseResponse } from "../types";
 export declare class SmartcardApis extends VTPassBaseConfig {
     /**
      *  The smartcard APIs for most providers in Nigeria
@@ -10,7 +10,7 @@ export declare class SmartcardApis extends VTPassBaseConfig {
      *  Verify Smartcard
      * @param data The request body
      */
-    verify(data: SmartcardMerchantVerificationBody): Promise<VTPassBaseResponse<SmartcardVerificationResponse>>;
+    verify(data: SmartcardMerchantVerificationBody): Promise<VTPassServicesBaseResponse<SmartcardVerificationResponse>>;
     /**
      *  Fetch Smartcard Products
      * @param provider The provider to fetch products for

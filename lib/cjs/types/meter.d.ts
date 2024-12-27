@@ -1,6 +1,6 @@
 import { VTPassBaseConfig, VTPassConfigOptions } from "./configs";
 import { MeterServiceIDs, MeterType } from "./const";
-import { MeterTransactionResponse, MeterVerificationResponse, VTPassBaseResponse, VTPassMeterTokenTransactionResponse } from "./responses";
+import { MeterTransactionResponse, MeterVerificationResponse, VTPassMeterTokenTransactionResponse, VTPassServicesBaseResponse } from "./responses";
 export type VerifyMeterBody = {
     /** This is basically the type of meter you are trying to validate. It can be either prepaid or postpaid */
     type: "prepaid" | "postpaid";
@@ -31,7 +31,7 @@ export declare class MeterApis extends VTPassBaseConfig {
      *  Verify Meter
      * @param data The request body
      */
-    verify(data: VerifyMeterBody): Promise<VTPassBaseResponse<MeterVerificationResponse>>;
+    verify(data: VerifyMeterBody): Promise<VTPassServicesBaseResponse<MeterVerificationResponse>>;
     /**
      *  Purchase Meter Token
      * @param data The request body

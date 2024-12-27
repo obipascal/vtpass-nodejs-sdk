@@ -1,6 +1,6 @@
 import { VTPassConfigOptions } from "./configs";
 import { SmartcardProviders, SmartcardSubscriptionType } from "./const";
-import { SmartcardProductItem, SmartcardTransactionResponse, SmartcardVerificationResponse, VTPassBaseResponse } from "./responses";
+import { SmartcardProductItem, SmartcardTransactionResponse, SmartcardVerificationResponse, VTPassBaseResponse, VTPassServicesBaseResponse } from "./responses";
 export type SmartcardMerchantVerificationBody = {
     billersCode: string;
     serviceID: SmartcardProviders;
@@ -39,7 +39,7 @@ export declare class SmartcardApis {
      *  Verify Smartcard
      * @param data The request body
      */
-    verify(data: SmartcardMerchantVerificationBody): Promise<VTPassBaseResponse<SmartcardVerificationResponse>>;
+    verify(data: SmartcardMerchantVerificationBody): Promise<VTPassServicesBaseResponse<SmartcardVerificationResponse>>;
     /**
      *  Fetch Smartcard Products
      * @param provider The provider to fetch products for
