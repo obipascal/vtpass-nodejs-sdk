@@ -23,6 +23,7 @@ export interface VTPassBaseResponse<T = any, V = any> extends AxiosResponse {
 }
 
 export interface VTPassServicesBaseResponse<T = any> extends AxiosResponse {
+    code: string;
     response_description: string;
     content: T;
 }

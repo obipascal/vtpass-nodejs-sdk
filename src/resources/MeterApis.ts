@@ -6,6 +6,7 @@ import {
     VTPassBaseResponse,
     VTPassConfigOptions,
     VTPassMeterTokenTransactionResponse,
+    VTPassServicesBaseResponse,
 } from "../types";
 import {
     MeterTokenBody,
@@ -28,7 +29,7 @@ export class MeterApis extends VTPassBaseConfig {
      */
     verify(
         data: VerifyMeterBody
-    ): Promise<VTPassBaseResponse<MeterVerificationResponse>> {
+    ): Promise<VTPassServicesBaseResponse<MeterVerificationResponse>> {
         return this.httpClient.post(EndPoints.general.verifyMerchant, data);
     }
 

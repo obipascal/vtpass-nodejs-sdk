@@ -9,6 +9,7 @@ import {
     SmartcardRequestBody,
     SmartcardTransactionResponse,
     SmartcardProductItem,
+    VTPassServicesBaseResponse,
 } from "../types";
 
 export class SmartcardApis extends VTPassBaseConfig {
@@ -26,7 +27,7 @@ export class SmartcardApis extends VTPassBaseConfig {
      */
     async verify(
         data: SmartcardMerchantVerificationBody
-    ): Promise<VTPassBaseResponse<SmartcardVerificationResponse>> {
+    ): Promise<VTPassServicesBaseResponse<SmartcardVerificationResponse>> {
         return await this.httpClient.post(
             EndPoints.general.verifyMerchant,
             data

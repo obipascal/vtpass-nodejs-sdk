@@ -5,6 +5,7 @@ import {
     SmartcardTransactionResponse,
     SmartcardVerificationResponse,
     VTPassBaseResponse,
+    VTPassServicesBaseResponse,
 } from "./responses";
 
 export type SmartcardMerchantVerificationBody = {
@@ -51,7 +52,7 @@ export declare class SmartcardApis {
      */
     verify(
         data: SmartcardMerchantVerificationBody
-    ): Promise<VTPassBaseResponse<SmartcardVerificationResponse>>;
+    ): Promise<VTPassServicesBaseResponse<SmartcardVerificationResponse>>;
 
     /**
      *  Fetch Smartcard Products
