@@ -1,4 +1,5 @@
 import { AxiosInstance } from "axios";
+import { IService, IServiceCategory, VTPassServicesBaseResponse } from "./responses";
 export interface VTPassConfigOptions {
     username?: string;
     password?: string;
@@ -36,4 +37,9 @@ export declare class VTPassBaseConfig {
      * The Request ID should be a string in the unix format YYYYMMDDHHII consisting of today’s date + current hour and minute (e.g: 202201301610) and can be concatenated with any other alphanumeric string as desired (e.g: 202201301610ad8ef08acd8fc0f or 2022013016104738492849).
      */
     generateRequestId(): string;
+    /**
+     * List available services provided by VTpass
+     */
+    listAvailableServices(): Promise<VTPassServicesBaseResponse<IServiceCategory[]>>;
+    listServices(identifier: string): Promise<VTPassServicesBaseResponse<IService[]>>;
 }
