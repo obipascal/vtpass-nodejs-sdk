@@ -1,7 +1,13 @@
 import { AxiosInstance } from "axios";
-import { VTPassConfigOptions } from "../types";
+import {
+    IService,
+    IServiceCategory,
+    VTPassConfigOptions,
+    VTPassServicesBaseResponse,
+} from "../types";
 import HttpRequestClient from "./httpClient";
 import { formatDateTime } from "../utils/date";
+import { EndPoints } from "./endpoints";
 
 export class VTPassBaseConfig {
     private SANDBOX_URL: string = "https://sandbox.vtpass.com/api";
@@ -37,5 +43,27 @@ export class VTPassBaseConfig {
         // generate some random IDs with a legnth of 8 and append it at the end
         const randomId = Math.random().toString(36).substring(2, 10);
         return `${formattedDate}${randomId}`;
+    }
+
+    /**
+     *  List available services provided by VTpass
+     */
+    public async listAvailableServices(): Promise<
+        VTPassServicesBaseResponse<IServiceCategory[]>
+    > {
+        return await this.httpClient.get(
+            EndPoints.general.listAvailableServices
+        );
+    }
+
+    /**
+     *  List services
+     */
+    public async listServices(
+        identifier: string
+    ): Promise<VTPassServicesBaseResponse<IService[]>> {
+        return await this.httpClient.get(
+            EndPoints.general.listServices.replace(":identifier", identifier)
+        );
     }
 }

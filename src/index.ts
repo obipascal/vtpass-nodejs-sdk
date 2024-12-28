@@ -6,6 +6,8 @@ export {
     SmartcardProviders,
     SmartcardSubscriptionType,
     DataSubProviders,
+    IService,
+    IServiceCategory,
 } from "./types";
 export * from "./resources/AirtimeApis";
 export * from "./resources/MeterApis";
