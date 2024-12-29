@@ -59,39 +59,47 @@ export interface MeterVerificationResponse {
     WrongBillersCode: boolean;
 }
 export interface MeterTransactionResponse {
-    amount: number;
-    convinience_fee: number;
-    status: ResponseStatus;
-    name: string;
-    phone: string;
-    email: string;
-    type: string;
-    created_at: string;
-    discount: string;
-    giftcard_id: string;
-    total_amount: number;
-    commission: number;
-    channel: string;
-    platform: string;
-    service_verification: string;
-    quantity: number;
-    unit_price: number;
-    unique_element: number;
+    status: string;
     product_name: string;
+    unique_element: string;
+    unit_price: number;
+    quantity: number;
+    service_verification: string | null;
+    channel: string;
+    commission: number;
+    total_amount: string;
+    discount: number | null;
+    type: string;
+    email: string;
+    phone: string;
+    name: string | null;
+    convinience_fee: number;
+    amount: number;
+    platform: string;
+    method: string;
+    transactionId: string;
 }
 export interface VTPassMeterTokenTransactionResponse<T> extends VTPassBaseResponse<T> {
-    mainToken: string;
-    mainTokenDescription: string;
-    mainTokenUnits: number;
-    mainTokenTax: number;
-    mainsTokenAmount: number;
-    bonusToken: string;
-    bonusTokenDescription: string;
-    bonusTokenUnits: number;
-    bonusTokenTax: number;
-    bonusTokenAmount: number;
-    tariffIndex: string;
-    debtDescription: string;
+    response_description: string;
+    requestId: string;
+    amount: string;
+    transaction_date: {
+        date: string;
+        timezone_type: number;
+        timezone: string;
+    };
+    purchased_code: string;
+    customerName: string;
+    customerAddress: string;
+    token: string;
+    tokenAmount: number;
+    exchangeReference: string;
+    resetToken: string | null;
+    configureToken: string | null;
+    units: string;
+    fixChargeAmount: number | null;
+    tariff: string;
+    taxAmount: number | null;
 }
 export interface SmartcardVerificationResponse {
     Customer_Name: string;
