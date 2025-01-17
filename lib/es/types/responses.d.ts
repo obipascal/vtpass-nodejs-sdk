@@ -100,6 +100,23 @@ export interface VTPassMeterTokenTransactionResponse<T> extends VTPassBaseRespon
     fixChargeAmount: number | null;
     tariff: string;
     taxAmount: number | null;
+    MeterNumber: string;
+    Token: string;
+    ReceiptNumber: string | null;
+    PurchasedUnits: string;
+    DebtDescription: string | null;
+    DebtAmount: string | null;
+    RefundUnits: string | null;
+    ServiceChargeVatExcl: string | null;
+    Name: string;
+    Address: string;
+    Reference: string;
+    Vat: string | null;
+    ResponseTime: string | null;
+    TariffRate: string | null;
+    FreeUnits: string | null;
+    MeterCategory: string;
+    UtilityAmountVatExcl: string | null;
 }
 export interface SmartcardVerificationResponse {
     Customer_Name: string;
