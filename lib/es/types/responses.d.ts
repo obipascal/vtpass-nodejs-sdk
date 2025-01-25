@@ -97,6 +97,7 @@ export interface VTPassMeterTokenTransactionResponse<T> extends VTPassBaseRespon
     resetToken: string | null;
     configureToken: string | null;
     units: string;
+    Units: string | null;
     fixChargeAmount: number | null;
     tariff: string;
     taxAmount: number | null;
