@@ -105,6 +105,7 @@ export interface VTPassMeterTokenTransactionResponse<T>
     resetToken: string | null;
     configureToken: string | null;
     units: string;
+    Units: string | null;
     fixChargeAmount: number | null;
     tariff: string;
     taxAmount: number | null;
