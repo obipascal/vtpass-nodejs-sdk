@@ -1,4 +1,4 @@
-import { VTPassConfigOptions } from "./configs";
+import { VTPassBaseConfig, VTPassConfigOptions } from "./configs";
 import { DataSubProviders, ResponseStatus } from "./const";
 import { VTPassBaseResponse } from "./responses";
 export type DataSubProductItem = {
@@ -44,7 +44,7 @@ export interface DataSubTransactionResponse {
     method: string;
     transactionId: string;
 }
-export declare class DataSubscriptionApis {
+export declare class DataSubscriptionApis extends VTPassBaseConfig {
     /**
      *  Data Subscription APIs
      * @param options  The configuration options

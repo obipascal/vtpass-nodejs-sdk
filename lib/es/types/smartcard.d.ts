@@ -1,4 +1,4 @@
-import { VTPassConfigOptions } from "./configs";
+import { VTPassBaseConfig, VTPassConfigOptions } from "./configs";
 import { SmartcardProviders, SmartcardSubscriptionType } from "./const";
 import { SmartcardProductItem, SmartcardTransactionResponse, SmartcardVerificationResponse, VTPassBaseResponse, VTPassServicesBaseResponse } from "./responses";
 export type SmartcardMerchantVerificationBody = {
@@ -29,7 +29,7 @@ export interface SmartcardPurchaseRequestBody extends SmartcardRequestBody {
     /** This is a unique reference with which you can use to identify and query the status of a given transaction after the transaction has been executed. */
     request_id: string;
 }
-export declare class SmartcardApis {
+export declare class SmartcardApis extends VTPassBaseConfig {
     /**
      * Smartcard APIs
      * @param options The configuration options
