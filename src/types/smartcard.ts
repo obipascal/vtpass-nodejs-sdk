@@ -1,4 +1,4 @@
-import { VTPassConfigOptions } from "./configs";
+import { VTPassBaseConfig, VTPassConfigOptions } from "./configs";
 import { SmartcardProviders, SmartcardSubscriptionType } from "./const";
 import {
     SmartcardProductItem,
@@ -39,7 +39,7 @@ export interface SmartcardPurchaseRequestBody extends SmartcardRequestBody {
     request_id: string;
 }
 
-export declare class SmartcardApis {
+export declare class SmartcardApis extends VTPassBaseConfig {
     /**
      * Smartcard APIs
      * @param options The configuration options
