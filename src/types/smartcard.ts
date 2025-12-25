@@ -25,7 +25,7 @@ export interface SmartcardRequestBody {
     _______________________________________________________
     NOTE: This is optional. If you specify amount, we will topup decoder with the amount. If you do not specify amount, then we will use the price set for the bouquet (as returned in GET VARIATION CODES endpoint)
     */
-    amount: number;
+    amount?: number;
     /** The phone number of the customer or recipient of this service */
     phone: string;
     /** The type of subscription */
