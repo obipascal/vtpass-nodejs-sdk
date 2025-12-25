@@ -8,7 +8,7 @@ export {
     DataSubProviders,
     IService,
     IServiceCategory,
-} from "./types";
+} from "./types/index.js";
 export * from "./resources/AirtimeApis";
 export * from "./resources/MeterApis";
 export * from "./resources/SmartcardApis";
